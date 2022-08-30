@@ -1,7 +1,8 @@
 ---
- - name: Create a login user
-     user:
-      name: $JOHN
-      password: $JOHN
+tasks:
+  - name: Create a login user
+      user:
+        name: $JOHN
+        password: $JOHN
       state: present
       shell: /bin/bash       # Defaults to /bin/bash
