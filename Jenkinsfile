@@ -1,7 +1,7 @@
 pipeline {  
     agent any
-     stages {
-        stage('start playbook') {
+     steps {
+        step('start playbook') {
           withCredentials(
             [usernamePassword(credentialsId: 'create_user_john', 
                     usernameVariable: 'USERNAME', 
