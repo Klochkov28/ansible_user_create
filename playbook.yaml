@@ -1,8 +1,16 @@
 ---
-tasks:
-  - name: Create a login user
-    user:
-      name: $JOHN
-      password: $JOHN
-    state: present
-    shell: /bin/bash       # Defaults to /bin/bash
+- name: Create user on a linux server
+  hosts: all
+  become: yes
+  gather_facts: false
+  vars:
+    - user: $JOHN
+    - password: $JOHN
+  tasks:
+      - name: Create a login user
+        user:
+          name: $JOHN
+          password: $JOHN
+          groups:
+            - wheel
+          state: present 
