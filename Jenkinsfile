@@ -1,12 +1,14 @@
 pipeline {  
     agent any
      stages {
-        step('start playbook') {
-          withCredentials(
+         stage ('start playbook') {
+            step('with env') {
+            withCredentials(
             [usernamePassword(credentialsId: 'create_user_john', 
                     usernameVariable: 'USERNAME', 
                     passwordVariable: 'PASSWORD')]) {
             sh 'ansible-playbook -i host.ini playbook.yaml'
+            } 
             }
         }
       }
