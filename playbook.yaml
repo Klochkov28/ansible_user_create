@@ -1,6 +1,7 @@
-- name: Add the user 'johnd' with a specific uid and a primary group of 'admin'
-  ansible.builtin.user:
-    name: $JOHN
-    comment: John Doe
-    password: $JOHN
-    shell: "/bin/bash"
+---
+ - name: Create a login user
+     user:
+      name: $JOHN
+      password: $JOHN
+      state: present
+      shell: /bin/bash       # Defaults to /bin/bash
