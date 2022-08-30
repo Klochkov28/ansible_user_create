@@ -8,5 +8,6 @@ pipeline {
                     passwordVariable: 'PASSWORD')]) {
             sh 'ansible-playbook -i host.ini playbook.yaml'
             }
+        }
       }
 }
