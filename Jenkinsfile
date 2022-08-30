@@ -1,13 +1,17 @@
-pipeline {  
+
+pipeline {
+    options {
+        timestamps ()
+    }
     agent any
-     stages {
-        step('start playbook') {
-          withCredentials(
-            [usernamePassword(credentialsId: 'create_user_john', 
-                    usernameVariable: 'USERNAME', 
-                    passwordVariable: 'PASSWORD')]) {
-            sh 'ansible-playbook -i host.ini playbook.yaml'
+
+    stages {
+        stage('stage:[1]') {
+            steps('steps:[1]') {
+                withCredentials([string(credentialsId: 'create_user_john', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh ''' ansible-playbook -i host.ini playbook.yaml'''
+                }
             }
         }
-     }
+    }
 }
