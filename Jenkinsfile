@@ -9,4 +9,5 @@ pipeline {
             sh 'ansible-playbook -i host.ini playbook.yaml'
             }
         }
-      
+     }
+}
