@@ -11,6 +11,4 @@
         user:
           name: $JOHN
           password: $JOHN
-          groups:
-            - wheel
           state: present 
