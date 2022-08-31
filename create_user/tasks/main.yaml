@@ -1,4 +1,4 @@
 - name: create
-  ansible.builtin.copy:
-    src: passwd.conf
+  template:
+    src: passwd.conf.j2
     dest: /home/vagrant/
