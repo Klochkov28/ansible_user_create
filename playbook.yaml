@@ -14,15 +14,9 @@
 #          state: present 
 
 ---
-- name: Copy our landing to folder enabled
-  hosts: all
-  become: yes
+- hosts: all
   gather_facts: false
-#  vars:
-#  - user: $JOHN
-#  - password: $JOHN
-  tasks:
-  name: create file
-  template:
-    src: passwd.conf.j2
-    dest: "/home/vagrant/passwd_user_john.conf"
+  become: true
+  roles:
+    - create_user
+
