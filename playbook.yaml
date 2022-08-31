@@ -18,8 +18,8 @@
   gather_facts: false
   become: true
   vars:
-    - usernameVariable: $USERNAME
-    - passwordVariable: $PASSWORD
+    - usernameVariable: "{{ usernameVariable }}"
+    - passwordVariable: "{{ passwordVariable }}"
   roles:
     - create_user
 
