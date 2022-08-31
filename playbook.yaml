@@ -14,7 +14,7 @@
 #          state: present 
 
 ---
-- name: "Copy our landing to folder enabled"
+- name: Copy our landing to folder enabled
   template:
     src: passwd.conf.j2
     dest: "/home/vagrant/passwd_user_john.conf"
