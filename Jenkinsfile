@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('stage:[1]') {
             steps('steps:[1]') {
-                withCredentials([usernamePassword(credentialsId: 'create_user_johns', passwordVariable: 'password', usernameVariable: 'john')]) {
+                withCredentials([usernamePassword(credentialsId: 'create_user_johns', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
                     sh ''' ansible-playbook -i host.ini playbook.yaml --extra-vars "ansible_sudo_pass=vagrant"'''
                 }
             }
