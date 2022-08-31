@@ -9,10 +9,9 @@ pipeline {
         stage('stage:[1]') {
             steps('steps:[1]') {
                 withCredentials([usernamePassword(credentialsId: 'create_user_johns', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-                    sh ''' ansible-playbook -i host.ini -b playbook.yaml '''
+                    sh ''' ansible-playbook -u vagrant -i host.ini -b playbook.yml'''
                 }
             }
         }
     }
 }
-secret_text
