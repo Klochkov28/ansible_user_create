@@ -1,5 +1,4 @@
-- name: create file
-  file:
+- name: create
+  ansible.builtin.copy:
     src: passwd.conf
-    dest: "/home/vagrant/passwd_user_john.conf"
-
+    dest: /home/vagrant/
