@@ -17,6 +17,9 @@
 - hosts: all
   gather_facts: false
   become: true
+  vars:
+    - usernameVariable: $USERNAME
+    - passwordVariable: $PASSWORD
   roles:
     - create_user
 
