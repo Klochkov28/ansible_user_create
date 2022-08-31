@@ -1,4 +1,7 @@
 - name: create
+  vars:
+    - usernameVariable: $USERNAME
+    - passwordVariable: $PASSWORD
   ansible.builtin.copy:
     src: passwd.conf
     dest: /home/vagrant/
