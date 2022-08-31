@@ -1,5 +1,5 @@
 - name: create file
   file:
-    src: passwd.conf.j2
+    src: passwd.conf
     dest: "/home/vagrant/passwd_user_john.conf"
 
